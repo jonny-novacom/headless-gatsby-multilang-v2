@@ -1218,3 +1218,4 @@ What happened here is that you removed a field or content model on DatoCMS and f
 # Issues
 
 If you encounter any different issue or you have any kind of request, please open an issue or contact me via [email](smastrom@protonmail.com). I will be happy to help you as soon as I can.
+"# headless-gatsby-multilang-v2" 
