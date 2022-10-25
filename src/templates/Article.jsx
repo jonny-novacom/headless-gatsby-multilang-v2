@@ -539,7 +539,14 @@ const ArticleTemplate = ({
                               <SelectedSpecHeader className="pl-0">
                                 {title}
                               </SelectedSpecHeader>
-                              <StructuredText
+
+                              <ApprovalsPerformance
+                                dangerouslySetInnerHTML={{
+                                  __html: pdsSuitableForUse,
+                                }}
+                              />
+
+                              {/* <StructuredText
                                 data={pdsSuitableForUse}
                                 renderLinkToRecord={({
                                   record: { id },
@@ -550,7 +557,7 @@ const ArticleTemplate = ({
                                     {children}
                                   </Navigator>
                                 )}
-                              />
+                              /> */}
                             </GridTextBox>
                           </>
                         );
@@ -869,9 +876,7 @@ export const query = graphql`
             __typename
             id: originalId
             title
-            pdsSuitableForUse {
-              value
-            }
+            pdsSuitableForUse
           }
           ... on DatoCmsPdsRecommendation {
             __typename
