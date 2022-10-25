@@ -15,7 +15,7 @@ export const GlobalStyle = createGlobalStyle`
         --gapXL: 3.75rem; /* 60px */
         --borderRegular: 2px;
         --borderSmall: 1px;
-        --defaultStack: "Arial", -apple-system, BlinkMacSystemFont, "Helvetica", "Helvetica Neue", sans-serif;
+        --defaultStack: interstate, system-ui, sans-serif;
         --defaultCodeStack: ui-monospace, "Cascadia Mono", "Segoe UI Mono", "Ubuntu Mono", "Roboto Mono", Menlo, Monaco, Consolas, monospace;
         --headingXXL: 3.25rem; /* 52px */
         --headingXL: 2.625rem;  /* 42px */
