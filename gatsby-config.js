@@ -6,6 +6,14 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        typekit: {
+          id: 'qqd4ikq',
+        },
+      },
+    },
+    {
       resolve: 'gatsby-plugin-styled-components',
       options: {
         fileName: isDev,
@@ -22,15 +30,20 @@ module.exports = {
       __key: 'pages',
     },
     'gatsby-plugin-gatsby-cloud',
+    'gatsby-plugin-postcss',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-datocms',
       options: {
-        apiToken: '87cdc55b15aa843368e8df1531e7b4',
+        apiToken: '272e54eea09944c26a7ed43e94193b',
         localeFallbacks: {
-          'ar-AE': 'en',
+          it: 'en',
+          es: 'en',
+          fr: 'en',
+          de: 'en',
+          ar: 'en',
         },
       },
     },

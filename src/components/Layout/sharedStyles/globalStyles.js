@@ -5,7 +5,7 @@ import { easeOutTiming } from './animationStyles';
 export const GlobalStyle = createGlobalStyle`
     :root {
         --globalContainer: 1100px;
-        --articleContainer: 700px;
+        --articleContainer: 1000px;
         --globalPaddingLr: 1.875rem; /* 30px */
         --globalPaddingTb: 3.75rem; /* 60px */
         --defaultRadius: 0.625rem; /* 10px */
@@ -15,7 +15,7 @@ export const GlobalStyle = createGlobalStyle`
         --gapXL: 3.75rem; /* 60px */
         --borderRegular: 2px;
         --borderSmall: 1px;
-        --defaultStack: -apple-system, BlinkMacSystemFont, "Helvetica", "Helvetica Neue", "Arial", sans-serif;
+        --defaultStack: "Arial", -apple-system, BlinkMacSystemFont, "Helvetica", "Helvetica Neue", sans-serif;
         --defaultCodeStack: ui-monospace, "Cascadia Mono", "Segoe UI Mono", "Ubuntu Mono", "Roboto Mono", Menlo, Monaco, Consolas, monospace;
         --headingXXL: 3.25rem; /* 52px */
         --headingXL: 2.625rem;  /* 42px */
@@ -23,13 +23,13 @@ export const GlobalStyle = createGlobalStyle`
         --headingM: 1.625rem; /* 26px */
         --headingS: 1.375rem; /* 24px */
         --baseXL: 1.25rem; /* 20px */
-        --baseL: 1.125rem; /* 18px */
+        --baseL: 1rem; /* 18px */
         --baseM: 1rem; /* 16px */
         --baseS: .815rem; /* 14px */
         --baseMMobile: calc(var(--baseM) * 1.1);
         --baseSMobile: calc(var(--baseS) * 1.1);
         --headingsLineHeight: 1.1;
-        --bodyLineHeight: 1.5;
+        --bodyLineHeight: 1.4;
     }
 
     *, *::before, *::after {
@@ -52,7 +52,7 @@ export const GlobalStyle = createGlobalStyle`
     .lightTheme {
         --primaryColor: #0067FA;
         --headingsColor: #4D4D4D;
-        --baseTextColor:#6E7581;
+        --baseTextColor:#333333;
         --dividerColor: #E2E2E2;
         --markBackgroundColor: #FDFFB4;
         --markTextColor: #4D4D4D;

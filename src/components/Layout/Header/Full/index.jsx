@@ -34,7 +34,7 @@ export const Header = () => {
               ... on DatoCmsBlogRoot {
                 id: originalId
               }
-              ... on DatoCmsBlogPost {
+              ... on DatoCmsProductDataSheet {
                 id: originalId
               }
               ... on DatoCmsCategory {

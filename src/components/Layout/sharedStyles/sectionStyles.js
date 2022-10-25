@@ -14,6 +14,35 @@ const Section = styled.section`
   align-items: center;
 `;
 
+const FootnoteSection = styled.section`
+  width: 100%;
+  max-width: var(--globalContainer);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  ol {
+    list-style-type: none;
+    font-size: 0.75rem;
+  }
+  li:before {
+    content: '[' counter(section, decimal) '] ';
+  }
+  li {
+    counter-increment: section;
+    display: list-item;
+    margin-bottom: 10px;
+  }
+  p {
+    padding-left: 20px;
+    position: inherit;
+    margin-top: -15px !important;
+    line-height: 20px;
+  }
+`;
+
 const SectionGridTwoCols = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -21,6 +50,24 @@ const SectionGridTwoCols = styled.section`
   row-gap: var(--gapXL);
   margin: auto;
   padding-top: var(--globalPaddingTb);
+  max-width: var(--articleContainer);
+  width: 100%;
+
+  @media (max-width: 760px) {
+    column-gap: var(--gapL);
+  }
+
+  @media (max-width: 620px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const SectionStandardsGridTwoCols = styled.section`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--gapXL);
+  row-gap: 0rem;
+  margin: auto;
   max-width: var(--articleContainer);
   width: 100%;
 
@@ -63,7 +110,9 @@ const SectionFlexTwoCols = styled.section`
   flex-direction: row;
   width: 100%;
   margin: auto;
-  padding: var(--globalPaddingTb) var(--globalPaddingLr);
+  // margin-top: 2rem;
+  // padding: var(--globalPaddingTb) var(--globalPaddingLr);
+  gap: 1rem;
   max-width: var(--globalContainer);
 
   @media (max-width: 768px) {
@@ -101,8 +150,8 @@ const SectionFlexTwoColsReverse = styled(SectionFlexTwoCols)`
 
 const ColumnFlex = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: start;
   width: 50%;
 
   @media (max-width: 768px) {
@@ -117,16 +166,28 @@ const ColumnFlex = styled.div`
 
 const GridTextBox = styled.section`
   display: grid;
-  row-gap: ${({ small }) => (small ? 'var(--gapSmall)' : 'var(--gapRegular)')};
+  // row-gap: ${({ small }) => (small ? 'var(--gapSmall)' : 'var(--gapSmall)')};
   align-content: baseline;
+  width: 100%;
+
+  & ul li p {
+    margin-left: 0.75rem !important;
+  }
+
+  & p {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 `;
 
 export {
   Section,
+  FootnoteSection,
   SectionGridTwoCols,
   SectionGridThreeCols,
   SectionFlexTwoCols,
   SectionFlexTwoColsReverse,
+  SectionStandardsGridTwoCols,
   ColumnFlex,
   GridTextBox,
 };

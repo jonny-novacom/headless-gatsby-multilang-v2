@@ -9,10 +9,11 @@ const Wrapper = styled.header`
   width: 800px;
   grid-auto-flow: row;
   row-gap: var(--gapSmall);
-  justify-items: center;
+  justify-items: start;
   margin: auto;
-  max-width: 800px;
+  max-width: 1000px;
   width: 100%;
+  margin-bottom: 2rem;
 
   @media (max-width: 860px) {
     justify-items: inherit;
@@ -58,6 +59,13 @@ const ImgFullWrapper = styled.div`
   }
 `;
 
+const ImgBrandWrapper = styled.div`
+  --brandImgSize: 70px;
+  display: grid;
+  width: max-content;
+  grid-template-columns: auto auto;
+`;
+
 const ImgWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -76,6 +84,14 @@ const AuthorImg = styled(GatsbyImage)`
   border: 4px solid white;
   z-index: 1;
   position: relative;
+`;
+
+const BrandImg = styled(GatsbyImage)`
+  width: var(--brandImgSize);
+  height: auto;
+  z-index: 1;
+  position: relative;
+  object-fit: contain !important;
 `;
 
 const ArticleCover = styled(GatsbyImage)`
@@ -214,4 +230,6 @@ export {
   Dot,
   CategoryBox,
   LastModified,
+  BrandImg,
+  ImgBrandWrapper,
 };

@@ -122,7 +122,7 @@ export const query = graphql`
       locale
       id: originalId
     }
-    allBlogPosts: allDatoCmsBlogPost(
+    allBlogPosts: allDatoCmsProductDataSheet(
       filter: {
         locale: { eq: $locale }
         featuredInHomepage: { eq: true }

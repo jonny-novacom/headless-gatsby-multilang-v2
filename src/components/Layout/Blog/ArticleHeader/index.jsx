@@ -29,6 +29,8 @@ import {
   Dot,
   CategoryBox,
   LastModified,
+  BrandImg,
+  ImgBrandWrapper,
 } from './styles';
 import { useFormattedDate } from '../../../../hooks/useFormattedDate';
 
@@ -39,9 +41,14 @@ const commonExtLinkProps = {
 
 export const ArticleHeader = ({
   authorName,
+  brandTitle,
   title,
   subtitle,
+  brand,
+  productCode,
+  productDescription,
   authorImg,
+  brandImg,
   coverImg,
   lastModified,
   lastModifiedText,
@@ -78,7 +85,7 @@ export const ArticleHeader = ({
             <Navigator recordId={category.id}>{category.title}</Navigator>
           </CategoryBox>
         )}
-        <AuthorDateContainer>
+        {/* <AuthorDateContainer>
           {authorName && (
             <>
               <Author>{authorName}</Author>
@@ -86,14 +93,38 @@ export const ArticleHeader = ({
             </>
           )}
           <Author as="time">{formattedDate}</Author>
-        </AuthorDateContainer>
-        <ArticleTitle>{title}</ArticleTitle>
-        <ArticleSubtitle>{subtitle}</ArticleSubtitle>
+        </AuthorDateContainer> */}
+
+        <div className="flex justify-between w-full">
+          <div className="grid content-end h-auto">
+            <ArticleTitle
+              className={brandTitle === 'Caltex' ? `text-caltexBlue` : ``}
+            >
+              {title}
+            </ArticleTitle>
+            <ArticleSubtitle>{subtitle}</ArticleSubtitle>
+          </div>
+          <div>
+            <ImgBrandWrapper>
+              <ImgWrapper>
+                <BrandImg
+                  as={!brandImg && 'div'}
+                  style={{ visibility: !brandImg && 'hidden' }}
+                  image={brandImg}
+                  alt={brandTitle}
+                  objectFit="contain"
+                />
+              </ImgWrapper>
+            </ImgBrandWrapper>
+          </div>
+        </div>
+
+        {/* <p>{productCode}</p>
         <LastModified>
           {`${lastModifiedText}: ${formatDateTime(lastModified, pageLocale)}`}
-        </LastModified>
+        </LastModified> */}
       </Wrapper>
-      <ImgFullWrapper $isRtl={isRtl}>
+      {/* <ImgFullWrapper $isRtl={isRtl}>
         <ImgWrapper>
           <AuthorImg
             as={!authorImg && 'div'}
@@ -114,7 +145,7 @@ export const ArticleHeader = ({
             </Icon>
           ))}
         </SharingIcons>
-      </ImgFullWrapper>
+      </ImgFullWrapper> */}
     </>
   );
 };

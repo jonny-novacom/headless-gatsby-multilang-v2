@@ -275,18 +275,18 @@ exports.createPages = async ({
 
   const {
     data: {
-      allDatoCmsBlogPost: { blogPostNodes },
+      allDatoCmsProductDataSheet: { productDataSheetNodes },
     },
   } = await graphql(`
     query {
-      allDatoCmsBlogPost(
+      allDatoCmsProductDataSheet(
         sort: { fields: [locale, meta___updatedAt] }
         filter: {
           noTranslate: { ne: true }
           categoryLink: { noTranslate: { ne: true } }
         }
       ) {
-        blogPostNodes: nodes {
+        productDataSheetNodes: nodes {
           id: originalId
           categoryLink {
             categorySlug: slug
@@ -303,48 +303,50 @@ exports.createPages = async ({
   locales.forEach((siteLocale) => {
     let pageCounter = 0;
 
-    const blogPostNodesPerLocale = blogPostNodes.filter(
+    const productDataSheetNodesPerLocale = productDataSheetNodes.filter(
       ({ locale }) => locale === siteLocale
     );
-    const blogPostsPerLocale = blogPostNodesPerLocale.length;
+    const productDataSheetsPerLocale = productDataSheetNodesPerLocale.length;
     const blogPathName = getBlogPathname(siteLocale);
 
-    blogPostNodesPerLocale.forEach(({ locale, slug, id, categoryLink }) => {
-      const categorySlug = categoryLink?.categorySlug;
-      const isUncategorized = categoryLink === null;
-      const isGeneratingDefaultLang = locale === defaultLocale;
+    productDataSheetNodesPerLocale.forEach(
+      ({ locale, slug, id, categoryLink }) => {
+        const categorySlug = categoryLink?.categorySlug;
+        const isUncategorized = categoryLink === null;
+        const isGeneratingDefaultLang = locale === defaultLocale;
 
-      pageCounter += 1;
+        pageCounter += 1;
 
-      const isLastPost = pageCounter === blogPostsPerLocale;
+        const isLastPost = pageCounter === productDataSheetsPerLocale;
 
-      createPage({
-        path: (() => {
-          if (isUncategorized) {
-            if (isGeneratingDefaultLang) return `${blogPathName}/${slug}`;
-            return `${locale}/${blogPathName}/${slug}`;
-          }
-          if (isGeneratingDefaultLang) {
-            return `${blogPathName}/${categorySlug}/${slug}`;
-          }
-          return `${locale}/${blogPathName}/${categorySlug}/${slug}`;
-        })(),
-        component: ArticleTemplate,
-        context: {
-          id,
-          locale,
-        },
-      });
+        createPage({
+          path: (() => {
+            if (isUncategorized) {
+              if (isGeneratingDefaultLang) return `${blogPathName}/${slug}`;
+              return `${locale}/${blogPathName}/${slug}`;
+            }
+            if (isGeneratingDefaultLang) {
+              return `${blogPathName}/${categorySlug}/${slug}`;
+            }
+            return `${locale}/${blogPathName}/${categorySlug}/${slug}`;
+          })(),
+          component: ArticleTemplate,
+          context: {
+            id,
+            locale,
+          },
+        });
 
-      if (isLastPost) {
-        console.log(
-          '\x1b[35m',
-          'node',
-          '\x1b[0m',
-          `Generated ${pageCounter} posts for "${locale}" locale.`
-        );
+        if (isLastPost) {
+          console.log(
+            '\x1b[35m',
+            'node',
+            '\x1b[0m',
+            `Generated ${pageCounter} posts for "${locale}" locale.`
+          );
+        }
       }
-    });
+    );
   });
 
   // Webmanifest generation

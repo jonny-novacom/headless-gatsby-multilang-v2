@@ -9,7 +9,7 @@ export const uncontrolledHTMLStyles = css`
   & ol {
     list-style-type: decimal;
     margin: var(--paragraphMargin);
-    line-height: 1.6;
+    line-height: 1.4;
 
     & li {
       & > ol {
@@ -29,7 +29,8 @@ export const uncontrolledHTMLStyles = css`
   & ul {
     list-style-type: disc;
     margin: var(--paragraphMargin);
-    line-height: 1.6;
+    line-height: 1.4;
+    margin: 0 1rem;
 
     & li {
       & > ul {
@@ -85,5 +86,13 @@ export const uncontrolledHTMLStyles = css`
     & code {
       font-family: var(--defaultCodeStack) !important;
     }
+  }
+
+  & ul li:last-of-type {
+    margin-bottom: 1rem;
+  }
+
+  & ul li:first-of-type {
+    margin-bottom: 0.75rem;
   }
 `;

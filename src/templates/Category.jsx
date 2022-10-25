@@ -79,7 +79,7 @@ export const query = graphql`
         heroAlt
       }
     }
-    allCategoryPosts: allDatoCmsBlogPost(
+    allCategoryPosts: allDatoCmsProductDataSheet(
       filter: {
         locale: { eq: $locale }
         noTranslate: { ne: true }

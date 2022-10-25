@@ -1,27 +1,67 @@
 /* eslint-disable react/jsx-filename-extension */
 import styled from 'styled-components';
+import tw from 'tailwind-styled-components';
 
 // Articles
 
-const ArticleTitle = styled.h1`
-  font-size: var(--headingXL);
-  color: var(--headingsColor);
-  text-align: center;
-  line-height: var(--headingsLineHeight);
+const ArticleTitle = tw.h1`
+  font-medium
+  leading-tight
+  text-4xl
+  mt-2
+  mb-1
+  text-texacoRed
+`;
+
+const ArticleSubtitle = tw.h2`
+  font-medium
+  leading-tight
+  text-xl
+  mt-0
+  text-gray-700
+`;
+
+const SectionHeader = tw.h4`
+  font-normal
+  uppercase
+  leading-tight
+  text-base
+  mt-8
+  mb-6
+  text-white
+  bg-texacoRed
+  px-3
+  pt-3
+  pb-2
+  tracking-wider
+`;
+
+const SelectedSpecHeader = tw.h5`
+  font-bold
+  leading-tight
+  text-base
+  mt-0
+  pb-2
+  px-4
+`;
+
+const ApplicationHeader = styled.p`
+  font-size: 1.3rem !important;
+  color: #333333 !important;
+  margin-top: 2rem !important;
+  text-align: left;
+  line-height: var(--bodyLineHeight);
 
   @media (max-width: 860px) {
     text-align: inherit;
   }
-
-  @media (max-width: 768px) {
-    font-size: var(--headingL);
-  }
 `;
 
-const ArticleSubtitle = styled.p`
-  font-size: var(--baseXL);
-  color: var(--baseTextColor);
-  text-align: center;
+const ApprovalsHeader = styled.p`
+  font-size: 1.3rem !important;
+  color: #333333 !important;
+  margin-top: 0rem !important;
+  text-align: left;
   line-height: var(--bodyLineHeight);
 
   @media (max-width: 860px) {
@@ -98,7 +138,11 @@ export {
   ArticleTitle,
   ArticleSubtitle,
   SectionTitle,
+  SectionHeader,
+  SelectedSpecHeader,
   HeadingMedium,
   HeadingSmall,
+  ApplicationHeader,
+  ApprovalsHeader,
   HeadingSmallWithTip,
 };

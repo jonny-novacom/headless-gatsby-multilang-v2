@@ -12,7 +12,7 @@ const BlogRootTemplate = ({
       hero: [{ heroTitle, heroSubtitle }],
       seo,
     },
-    allDatoCmsBlogPost: { blogPostNodes },
+    allDatoCmsProductDataSheet: { blogPostNodes },
   },
   pageContext,
 }) => (
@@ -27,11 +27,20 @@ const BlogRootTemplate = ({
     <CategoriesMenu />
     <SectionGridThreeCols>
       {blogPostNodes.map(
-        ({ id, meta: { updatedAt }, coverImage, title, subtitle, author }) => (
+        ({
+          id,
+          meta: { updatedAt },
+          coverImage,
+          title,
+          subtitle,
+          author,
+          productCode,
+        }) => (
           <ArticleCard
             key={id}
             recordId={id}
             date={updatedAt}
+            productCode={productCode}
             cardImg={coverImage.gatsbyImageData}
             cardImgMobile={coverImage.squaredImage}
             altImg={title}
@@ -53,7 +62,7 @@ export default BlogRootTemplate;
 
 export const query = graphql`
   query BlogRootQuery($locale: String!) {
-    allDatoCmsBlogPost(
+    allDatoCmsProductDataSheet(
       filter: {
         locale: { eq: $locale }
         noTranslate: { ne: true }
@@ -66,6 +75,7 @@ export const query = graphql`
         id: originalId
         title
         subtitle
+        productCode
         noTranslate
         meta {
           updatedAt
@@ -77,7 +87,7 @@ export const query = graphql`
         coverImage {
           gatsbyImageData(
             width: 300
-            height: 120
+            height: 150
             placeholder: NONE
             forceBlurhash: false
           )

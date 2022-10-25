@@ -26,6 +26,7 @@ export const ArticleCard = ({
   cardImg,
   cardImgMobile,
   altImg,
+  productCode,
 }) => {
   const images = artDirectedCardImgs(cardImg, cardImgMobile);
 
@@ -35,14 +36,14 @@ export const ArticleCard = ({
     <article>
       <CardLink recordId={recordId}>
         <CardImgContainer>
-          <CardImg objectFit="cover" image={images} alt={altImg || ''} />
+          <CardImg objectFit="contain" image={images} alt={altImg || ''} />
         </CardImgContainer>
         <ContentWrapper>
           {category && <CategoryBox>{category.title}</CategoryBox>}
-          <Date>{formattedDate}</Date>
+          <Date>{productCode}</Date>
           <PostTitle>{title}</PostTitle>
           <Excerpt>{excerpt}</Excerpt>
-          <AuthorCtaContainer>
+          {/* <AuthorCtaContainer>
             <AuthorContainer>
               <AuthorImg
                 objectFit="cover"
@@ -51,7 +52,7 @@ export const ArticleCard = ({
               />
               <Date as="address">{authorName}</Date>
             </AuthorContainer>
-          </AuthorCtaContainer>
+          </AuthorCtaContainer> */}
         </ContentWrapper>
       </CardLink>
     </article>

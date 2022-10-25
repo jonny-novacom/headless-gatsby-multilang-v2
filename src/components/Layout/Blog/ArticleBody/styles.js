@@ -20,7 +20,7 @@ export const ArticleBodyStyles = styled.div`
           }
         `}
 
-  --paragraphBottomMargin: 1.6em;
+  --paragraphBottomMargin: 0.5em;
   --paragraphMargin: 0 0 var(--paragraphBottomMargin) 0;
   --headingsMargin: 0 0 0.8em 0;
   --listMargin: 0 0 0.33em 0;
@@ -30,6 +30,7 @@ export const ArticleBodyStyles = styled.div`
     color: var(--baseTextColor);
     font-size: var(--baseL);
     margin: var(--paragraphMargin);
+    font-weight: 400;
 
     &:only-child,
     &:last-child {
@@ -69,6 +70,11 @@ export const ArticleBodyStyles = styled.div`
     background-color: var(--dividerColor);
     border: none;
     height: var(--borderSmall);
+  }
+
+  & ul li {
+    margin-bottom: 0.5rem;
+    font-weight: 400;
   }
 
   @media (max-width: 860px) {
