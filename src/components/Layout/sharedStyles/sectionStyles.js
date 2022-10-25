@@ -29,6 +29,7 @@ const FootnoteSection = styled.section`
   }
   li:before {
     content: '[' counter(section, decimal) '] ';
+    margin: 0;
   }
   li {
     counter-increment: section;
@@ -36,7 +37,7 @@ const FootnoteSection = styled.section`
     margin-bottom: 10px;
   }
   p {
-    padding-left: 20px;
+    padding: 0 20px !important;
     position: inherit;
     margin-top: -15px !important;
     line-height: 20px;

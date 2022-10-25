@@ -458,10 +458,13 @@ const ArticleTemplate = ({
                       case 'DatoCmsPdsApproval':
                         return (
                           <GridTextBox as="div">
-                            <SelectedSpecHeader>
+                            <SelectedSpecHeader
+                              className={approvalsTitle === '' ? `pb-0` : ``}
+                            >
                               {approvalsTitle}
                             </SelectedSpecHeader>
                             <ApprovalsPerformance
+                              className={approvalsTable === '' ? `mb-0` : ``}
                               dangerouslySetInnerHTML={{
                                 __html: approvalsTable,
                               }}
