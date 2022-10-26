@@ -57,7 +57,7 @@ const ArticleTemplate = ({
 }) => (
   <PageWrapper
     pageData={pageContext}
-    seoTitle={seo?.seoTitle}
+    seoTitle={seo?.title}
     seoDescription={seo?.seoDescription}
     seoImage={seo?.image?.seoImageUrl}
   >
@@ -733,7 +733,7 @@ export const query = graphql`
       locale
       title
       seo {
-        seoTitle: title
+        title
         seoDescription: description
         seoImage: image {
           seoImageUrl: url
