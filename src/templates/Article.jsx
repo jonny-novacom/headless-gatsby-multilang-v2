@@ -457,7 +457,10 @@ const ArticleTemplate = ({
                     switch (__typename) {
                       case 'DatoCmsPdsApproval':
                         return (
-                          <GridTextBox as="div">
+                          <GridTextBox
+                            as="div"
+                            className={approvalsTitle === '' ? `pb-0` : ``}
+                          >
                             <SelectedSpecHeader
                               className={approvalsTitle === '' ? `pb-0` : ``}
                             >
@@ -536,7 +539,7 @@ const ArticleTemplate = ({
                         return (
                           <>
                             <GridTextBox as="div">
-                              <SelectedSpecHeader className="pl-0">
+                              <SelectedSpecHeader className="px-2">
                                 {title}
                               </SelectedSpecHeader>
 
@@ -545,19 +548,6 @@ const ArticleTemplate = ({
                                   __html: pdsSuitableForUse,
                                 }}
                               />
-
-                              {/* <StructuredText
-                                data={pdsSuitableForUse}
-                                renderLinkToRecord={({
-                                  record: { id },
-                                  children,
-                                  transformedMeta,
-                                }) => (
-                                  <Navigator {...transformedMeta} recordId={id}>
-                                    {children}
-                                  </Navigator>
-                                )}
-                              /> */}
                             </GridTextBox>
                           </>
                         );

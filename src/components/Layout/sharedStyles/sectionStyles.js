@@ -37,7 +37,7 @@ const FootnoteSection = styled.section`
     margin-bottom: 10px;
   }
   p {
-    padding: 0 20px !important;
+    padding: 0 25px !important;
     position: inherit;
     margin-top: -15px !important;
     line-height: 20px;
