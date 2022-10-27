@@ -9,9 +9,6 @@ import { JsonToTable } from 'react-json-to-table';
 import { PageWrapper } from '../components/Layout/PageWrapper';
 import { ArticleHeader } from '../components/Layout/Blog/ArticleHeader';
 import {
-  ApplicationHeader,
-  ApprovalsHeader,
-  ProductDescriptionHeader,
   SectionHeader,
   SectionTitle,
   SelectedSpecHeader,
@@ -79,6 +76,7 @@ const ArticleTemplate = ({
         lastModifiedText={updatedAtText}
         category={categoryLink}
       />
+
       <ArticleBody>
         <GridTextBox as="div">
           {structuredBody?.value && (
@@ -133,6 +131,7 @@ const ArticleTemplate = ({
                         />
                       </GridTextBox>
                     );
+
                   default:
                     return null;
                 }
