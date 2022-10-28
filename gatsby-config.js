@@ -32,12 +32,7 @@ module.exports = {
       __key: 'pages',
     },
     'gatsby-plugin-gatsby-cloud',
-    {
-      resolve: `gatsby-plugin-postcss`,
-      options: {
-        postCssPlugins: [require(`tailwindcss`)],
-      },
-    },
+    'gatsby-plugin-postcss',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
