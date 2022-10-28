@@ -475,9 +475,17 @@ const ArticleTemplate = ({
                         );
                       case 'DatoCmsPdsPerformance':
                         return (
-                          <GridTextBox as="div">
-                            <SelectedSpecHeader>{title}</SelectedSpecHeader>
+                          <GridTextBox
+                            as="div"
+                            className={title === '' ? `pb-0` : ``}
+                          >
+                            <SelectedSpecHeader
+                              className={title === '' ? `pb-0` : ``}
+                            >
+                              {title}
+                            </SelectedSpecHeader>
                             <ApprovalsPerformance
+                              className={performanceTable === '' ? `mb-0` : ``}
                               dangerouslySetInnerHTML={{
                                 __html: performanceTable,
                               }}
