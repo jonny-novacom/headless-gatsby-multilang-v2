@@ -36,7 +36,6 @@ module.exports = {
     'gatsby-plugin-sitemap',
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
-    'react-helmet',
     {
       resolve: 'gatsby-source-datocms',
       options: {

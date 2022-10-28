@@ -2,7 +2,6 @@ import { PageHead } from '../../Head/PageHead';
 import { Header } from '../Header/Full';
 import { Footer } from '../Footer';
 import { LocaleProvider } from '../../ContextProviders/LocaleProvider';
-import '../../../styles/global.css';
 
 export const PageWrapper = ({
   pageData,
