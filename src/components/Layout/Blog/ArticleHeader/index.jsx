@@ -33,6 +33,7 @@ import {
   ImgBrandWrapper,
 } from './styles';
 import { useFormattedDate } from '../../../../hooks/useFormattedDate';
+import { BsPrinterFill } from 'react-icons/bs';
 
 const commonExtLinkProps = {
   rel: 'noreferrer',
@@ -79,9 +80,22 @@ export const ArticleHeader = ({
   return (
     <>
       <Wrapper>
-        <BackToBlog />
+        <div className="flex justify-between w-full no-print">
+          <div>
+            <BackToBlog />
+          </div>
+          <div>
+            <button
+              onClick={() => window.print()}
+              className="inline-block px-4 text-3xl text-gray-700"
+            >
+              <BsPrinterFill className="p-[5px] border-2 border-gray-700 rounded-full" />
+            </button>
+          </div>
+        </div>
+
         {category && (
-          <CategoryBox>
+          <CategoryBox className="no-print">
             <Navigator recordId={category.id}>{category.title}</Navigator>
           </CategoryBox>
         )}

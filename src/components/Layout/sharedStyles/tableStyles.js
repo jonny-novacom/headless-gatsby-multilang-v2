@@ -3,7 +3,6 @@ import styled from 'styled-components';
 // Tables
 
 const ApprovalsPerformance = styled.table`
-  margin-bottom: 1rem;
   width: 100%;
   caption-side: top;
   border: none;
@@ -66,6 +65,10 @@ th {
 
   tbody tr:hover {
     background-color: transparent;
+  }
+
+  tbody tr:last-child {
+    padding-bottom: 1rem;
   }
 `;
 

@@ -33,7 +33,7 @@ export const Footer = () => {
   } = data;
 
   return (
-    <Wrapper>
+    <Wrapper className="no-print">
       <Container>
         {nodes
           .filter(({ locale }) => locale === pageLocale)

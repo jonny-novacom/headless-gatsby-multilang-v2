@@ -11,7 +11,7 @@ const Wrapper = styled.header`
   row-gap: var(--gapSmall);
   justify-items: start;
   margin: auto;
-  max-width: 1000px;
+  max-width: 1200px;
   width: 100%;
   margin-bottom: 2rem;
 

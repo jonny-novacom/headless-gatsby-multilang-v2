@@ -34,6 +34,7 @@
     "react-datocms": "^3.0.12",
     "react-dom": "^18.0.0",
     "react-helmet": "^6.1.0",
+    "react-icons": "^4.6.0",
     "react-is": "^18.0.0",
     "react-json-to-table": "^0.1.7",
     "react-syntax-highlighter": "^15.5.0",

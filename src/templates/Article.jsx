@@ -461,7 +461,9 @@ const ArticleTemplate = ({
                             className={approvalsTitle === '' ? `pb-0` : ``}
                           >
                             <SelectedSpecHeader
-                              className={approvalsTitle === '' ? `pb-0` : ``}
+                              className={
+                                approvalsTitle === '' ? `pb-0` : `pt-4`
+                              }
                             >
                               {approvalsTitle}
                             </SelectedSpecHeader>
@@ -480,7 +482,7 @@ const ArticleTemplate = ({
                             className={title === '' ? `pb-0` : ``}
                           >
                             <SelectedSpecHeader
-                              className={title === '' ? `pb-0` : ``}
+                              className={title === '' ? `pb-0` : `pt-4`}
                             >
                               {title}
                             </SelectedSpecHeader>
@@ -546,7 +548,9 @@ const ArticleTemplate = ({
                         return (
                           <>
                             <GridTextBox as="div">
-                              <SelectedSpecHeader className="px-2">
+                              <SelectedSpecHeader
+                                className={title === '' ? `pb-0` : `pt-4 px-2`}
+                              >
                                 {title}
                               </SelectedSpecHeader>
 
@@ -563,9 +567,7 @@ const ArticleTemplate = ({
                         return (
                           <>
                             <GridTextBox as="div">
-                              <SelectedSpecHeader className="pt-2">
-                                {title}
-                              </SelectedSpecHeader>
+                              <SelectedSpecHeader>{title}</SelectedSpecHeader>
                               <ApprovalsPerformance
                                 dangerouslySetInnerHTML={{
                                   __html: recommendationsTable,
@@ -680,7 +682,7 @@ const ArticleTemplate = ({
     </Section>
 
     {relatedPosts.length > 0 && (
-      <Section>
+      <Section className="no-print">
         <SectionTitle noPaddings css={{ maxWidth: 'var(--articleContainer)' }}>
           {nextReadText}
         </SectionTitle>

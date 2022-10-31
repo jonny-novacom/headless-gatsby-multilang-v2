@@ -129,7 +129,7 @@ export const Header = () => {
 
   return (
     <Wrapper>
-      <Container>
+      <Container className="no-print">
         <Navigator
           style={{ display: 'flex' }}
           aria-label={seoTitle}

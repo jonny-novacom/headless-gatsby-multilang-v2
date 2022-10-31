@@ -4,8 +4,8 @@ import { easeOutTiming } from './animationStyles';
 
 export const GlobalStyle = createGlobalStyle`
     :root {
-        --globalContainer: 1100px;
-        --articleContainer: 1000px;
+        --globalContainer: 1200px;
+        --articleContainer: 1140px;
         --globalPaddingLr: 1.875rem; /* 30px */
         --globalPaddingTb: 3.75rem; /* 60px */
         --defaultRadius: 0.625rem; /* 10px */
