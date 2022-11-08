@@ -31,6 +31,7 @@ import {
   LastModified,
   BrandImg,
   ImgBrandWrapper,
+  StageBox,
 } from './styles';
 import { useFormattedDate } from '../../../../hooks/useFormattedDate';
 import { BsPrinterFill } from 'react-icons/bs';
@@ -55,6 +56,7 @@ export const ArticleHeader = ({
   lastModifiedText,
   firstPublish,
   category,
+  stage,
 }) => {
   const { href } = useLocation();
   const { pageLocale } = usePageLocale();
@@ -94,11 +96,16 @@ export const ArticleHeader = ({
           </div>
         </div>
 
-        {category && (
-          <CategoryBox className="no-print">
-            <Navigator recordId={category.id}>{category.title}</Navigator>
-          </CategoryBox>
-        )}
+        <div className="flex justify-start w-full gap-4 no-print">
+          {stage && <StageBox className="no-print">{stage.stage}</StageBox>}
+
+          {/* {category && (
+            <CategoryBox className="no-print">
+              <Navigator recordId={category.id}>{category.title}</Navigator>
+            </CategoryBox>
+          )} */}
+        </div>
+
         {/* <AuthorDateContainer>
           {authorName && (
             <>

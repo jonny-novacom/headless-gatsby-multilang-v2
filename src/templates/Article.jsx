@@ -42,6 +42,7 @@ const ArticleTemplate = ({
       productDescription,
       author,
       brand,
+      stage,
       seo,
       coverImage: { coverImageData },
       meta: { updatedAt, firstPublishedAt },
@@ -75,6 +76,7 @@ const ArticleTemplate = ({
         lastModified={updatedAt}
         lastModifiedText={updatedAtText}
         category={categoryLink}
+        stage={stage}
       />
 
       <ArticleBody>
@@ -281,7 +283,9 @@ const ArticleTemplate = ({
                       case 'DatoCmsPdsSelectedSpecificationStandard':
                         return (
                           <GridTextBox as="div">
-                            <SelectedSpecHeader>{title}</SelectedSpecHeader>
+                            <SelectedSpecHeader className="mb-2">
+                              {title}
+                            </SelectedSpecHeader>
                             <SectionStandardsGridTwoCols>
                               {selectedStandards.map((standard, i) => (
                                 <ul>
@@ -772,6 +776,9 @@ export const query = graphql`
         image {
           brandImageData: gatsbyImageData(height: 120, width: 100)
         }
+      }
+      stage {
+        stage
       }
       relatedPosts {
         id: originalId

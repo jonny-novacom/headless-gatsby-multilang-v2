@@ -211,6 +211,39 @@ const CategoryBox = styled.h2`
   }
 `;
 
+const StageBox = styled.h2`
+  position: relative;
+  width: max-content;
+  border-radius: 0;
+  text-transform: uppercase;
+  font-size: var(--baseM);
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  letter-spacing: 0.025em;
+  padding: 0.3em 0.1em 0.4em 0.1em;
+  cursor: pointer;
+  border-bottom: var(--borderRegular) solid var(--primaryColor);
+  transition: background ${easeOutTiming}, color ${easeOutTiming};
+
+  @media (max-width: 860px) {
+    left: -0.25em;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background: var(--primaryColor);
+      & a {
+        color: white;
+      }
+    }
+  }
+
+  & a {
+    color: var(--primaryColor);
+  }
+`;
+
 const LastModified = styled.time`
   font-style: italic;
   margin-top: var(--gapRegular);
@@ -232,4 +265,5 @@ export {
   LastModified,
   BrandImg,
   ImgBrandWrapper,
+  StageBox,
 };
