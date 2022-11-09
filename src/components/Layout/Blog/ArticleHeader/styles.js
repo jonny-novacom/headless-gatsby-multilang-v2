@@ -229,19 +229,6 @@ const StageBox = styled.h2`
   @media (max-width: 860px) {
     left: -0.25em;
   }
-
-  @media (hover: hover) {
-    &:hover {
-      background: var(--primaryColor);
-      & a {
-        color: white;
-      }
-    }
-  }
-
-  & a {
-    color: var(--primaryColor);
-  }
 `;
 
 const LastModified = styled.time`
