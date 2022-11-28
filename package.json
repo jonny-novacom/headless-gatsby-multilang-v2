@@ -16,6 +16,17 @@
   },
   "dependencies": {
     "@babel/eslint-parser": "^7.17.0",
+    "@hocuspocus/provider": "^1.0.0-beta.4",
+    "@tiptap/extension-bold": "^2.0.0-beta.202",
+    "@tiptap/extension-collaboration": "^2.0.0-beta.202",
+    "@tiptap/extension-collaboration-cursor": "^2.0.0-beta.202",
+    "@tiptap/extension-document": "^2.0.0-beta.202",
+    "@tiptap/extension-paragraph": "^2.0.0-beta.202",
+    "@tiptap/extension-placeholder": "^2.0.0-beta.202",
+    "@tiptap/extension-text": "^2.0.0-beta.202",
+    "@tiptap/react": "^2.0.0-beta.202",
+    "@tiptap/starter-kit": "^2.0.0-beta.202",
+    "auth0-js": "^9.19.2",
     "babel-jest": "^27.5.1",
     "babel-plugin-styled-components": "^2.0.7",
     "babel-preset-gatsby": "^2.12.1",
@@ -39,7 +50,9 @@
     "react-json-to-table": "^0.1.7",
     "react-syntax-highlighter": "^15.5.0",
     "styled-components": "^5.3.5",
-    "tailwind-styled-components": "^2.2.0"
+    "tailwind-styled-components": "^2.2.0",
+    "y-webrtc": "^10.2.3",
+    "yjs": "^13.5.42"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",

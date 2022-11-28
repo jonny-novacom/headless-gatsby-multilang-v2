@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, Link, useStaticQuery } from 'gatsby';
 
 import { usePageLocale } from '../../../../hooks/usePageLocale';
 import { LanguageSwitcher } from '../../../LanguageSwitcher';
@@ -162,6 +162,9 @@ export const Header = () => {
                 )
               )
             )}
+            <Link to="/hidden-page" className="font-bold hover:text-texacoRed">
+              Hidden Page
+            </Link>
           </NavList>
         </Nav>
         <Right>

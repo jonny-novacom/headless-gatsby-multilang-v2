@@ -6,6 +6,9 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { JsonToTable } from 'react-json-to-table';
 
+import { useEditor, EditorContent } from '@tiptap/react';
+import StarterKit from '@tiptap/starter-kit';
+
 import { PageWrapper } from '../components/Layout/PageWrapper';
 import { ArticleHeader } from '../components/Layout/Blog/ArticleHeader';
 import {
@@ -30,6 +33,8 @@ import {
   ApprovalsPerformance,
   TypicalTestData,
 } from '../components/Layout/sharedStyles/tableStyles';
+import Tiptap from '../components/Utils/TipTap';
+import Comments from '../components/Utils/comments';
 
 const ArticleTemplate = ({
   data: {
@@ -42,7 +47,7 @@ const ArticleTemplate = ({
       productDescription,
       author,
       brand,
-      stage,
+      task,
       seo,
       coverImage: { coverImageData },
       meta: { updatedAt, firstPublishedAt },
@@ -76,8 +81,11 @@ const ArticleTemplate = ({
         lastModified={updatedAt}
         lastModifiedText={updatedAtText}
         category={categoryLink}
-        stage={stage}
+        stage={task?.stage}
+        dueDate={task?.dueDate}
       />
+
+      {/* <Tiptap /> */}
 
       <ArticleBody>
         <GridTextBox as="div">
@@ -685,6 +693,8 @@ const ArticleTemplate = ({
       </ArticleBody>
     </Section>
 
+    <Comments />
+
     {relatedPosts.length > 0 && (
       <Section className="no-print">
         <SectionTitle noPaddings css={{ maxWidth: 'var(--articleContainer)' }}>
@@ -777,8 +787,11 @@ export const query = graphql`
           brandImageData: gatsbyImageData(height: 120, width: 100)
         }
       }
-      stage {
+      task {
+        task
         stage
+        dueDate(formatString: "DD/MM/YYYY")
+        notes
       }
       relatedPosts {
         id: originalId

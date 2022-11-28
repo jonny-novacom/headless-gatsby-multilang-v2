@@ -32,6 +32,7 @@ import {
   BrandImg,
   ImgBrandWrapper,
   StageBox,
+  DateBox,
 } from './styles';
 import { useFormattedDate } from '../../../../hooks/useFormattedDate';
 import { BsPrinterFill } from 'react-icons/bs';
@@ -57,6 +58,7 @@ export const ArticleHeader = ({
   firstPublish,
   category,
   stage,
+  dueDate,
 }) => {
   const { href } = useLocation();
   const { pageLocale } = usePageLocale();
@@ -96,8 +98,21 @@ export const ArticleHeader = ({
           </div>
         </div>
 
-        <div className="flex justify-start w-full gap-4 no-print">
-          {stage && <StageBox className="no-print">{stage.stage}</StageBox>}
+        <div className="block w-full gap-4 no-print">
+          <div className="mb-2">
+            {stage && (
+              <StageBox className="no-print hover:pointer-events-none">
+                {stage}
+              </StageBox>
+            )}
+          </div>
+          <div>
+            {dueDate && (
+              <DateBox className="border-0 no-print">
+                Due Date: {dueDate}
+              </DateBox>
+            )}
+          </div>
 
           {/* {category && (
             <CategoryBox className="no-print">

@@ -30,3 +30,33 @@
     display: block;
   }
 }
+
+.the-editor {
+  background: #da291c;
+  padding: 0.5rem;
+}
+
+.the-editor button {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid black;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
+  background: white;
+}
+
+.ProseMirror {
+  border: 1px solid black;
+  padding: 1rem;
+  border-radius: 0;
+}
+
+.collaboration-cursor__label {
+  color: #fff;
+  padding: 0.25rem 1rem;
+  width: max-content;
+  border-radius: 5px;
+}
+
+.gc-body {
+  max-width: 1200px;
+}
