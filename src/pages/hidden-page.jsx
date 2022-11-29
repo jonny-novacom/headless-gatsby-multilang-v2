@@ -1,5 +1,5 @@
 import React from 'react';
-import { login } from '../components/utils/auth';
+import { login } from '../components/Utils/auth';
 
 export default function HiddenPage() {
   login();

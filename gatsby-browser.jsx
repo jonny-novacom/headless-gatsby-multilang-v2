@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { checkSession } from './src/components/utils/auth';
+import { checkSession } from './src/components/Utils/auth';
 import { ThemeProvider } from './src/components/ContextProviders/ThemeProvider';
 import { GlobalStyle } from './src/components/Layout/sharedStyles/globalStyles';
 import './src/styles/global.css';

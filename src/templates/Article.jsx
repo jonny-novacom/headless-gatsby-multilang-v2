@@ -33,7 +33,7 @@ import {
   ApprovalsPerformance,
   TypicalTestData,
 } from '../components/Layout/sharedStyles/tableStyles';
-import Tiptap from '../components/Utils/TipTap';
+import Tiptap from '../components/Utils/tiptap';
 import Comments from '../components/Utils/comments';
 
 const ArticleTemplate = ({
