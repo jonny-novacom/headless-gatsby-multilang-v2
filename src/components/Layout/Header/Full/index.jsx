@@ -162,9 +162,9 @@ export const Header = () => {
                 )
               )
             )}
-            <Link to="/hidden-page" className="font-bold hover:text-texacoRed">
+            {/* <Link to="/hidden-page" className="font-bold hover:text-texacoRed">
               Hidden Page
-            </Link>
+            </Link> */}
           </NavList>
         </Nav>
         <Right>

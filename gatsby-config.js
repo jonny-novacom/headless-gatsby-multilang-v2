@@ -1,6 +1,7 @@
 const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
+  pathPrefix: '/ikms2',
   siteMetadata: {
     siteUrl: 'https://headlessgatsbymultilangv2.gatsbyjs.io',
     title: 'Texaco | PDS',
